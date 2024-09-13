@@ -158,7 +158,7 @@ public class GlobalConfigurationServiceConfigurator extends CapabilityServiceNam
 
         builder.shutdown().hookBehavior(ShutdownHookBehavior.DONT_REGISTER);
         // Disable registration of MicroProfile Metrics
-        builder.metrics().gauges(false).histograms(false).accurateSize(true);
+        builder.metrics().gauges(false).histograms(false);
         builder.jmx().domain("org.wildfly.clustering.infinispan")
                 .mBeanServerLookup((this.server != null) ? new MBeanServerProvider(this.server.get()) : null)
                 .enabled(this.server != null)
